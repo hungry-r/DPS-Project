@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <TableLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/ButtonsTable"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="50dp"
+       android:orientation="horizontal" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <Button
+                android:text="@string/start"
+                android:id="@+id/startBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+              <Button
+                android:text="@string/history"
+                android:id="@+id/historyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>   
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+              <Button
+                android:text="@string/charts"
+                android:id="@+id/chartBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>   
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+              <Button
+                android:text="@string/alarm"
+                android:id="@+id/alarmBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>   
+        </TableRow>
+</TableLayout>

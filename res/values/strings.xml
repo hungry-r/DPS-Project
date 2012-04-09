@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Workout Tracker</string>
+	
+    <string name="start">Start Workout</string>
+    <string name="history">Workout History</string>
+    <string name="charts">Workout Charts</string>
+    <string name="alarm">Workout Alarm</string>
+    
+    <!-- Workout Tracker strings -->
+    
+    <string name="changeDateBtn">Change Workout Date</string>
+    <string name="workoutDateText">Workout Date:</string>
+    <string name="addBtn">Add Exercise</string>
+    
+    <!--  Exercise Selector string values -->
+    <string name="exerciseSpinnerTitle">Exercise Selector</string>
+    
+    <string-array name="exercises_array_chest">
+        <item>Bench Press</item>
+        <item>Butterfly Press</item>
+        <item>Dumbbell Press</item>
+    </string-array>
+    
+    <string-array name="exercises_array_back">
+        <item>Lat Pulldown</item>
+        <item>Dead Lift</item>
+        <item>Seated Cable Row</item>
+    </string-array>
+    
+    <string-array name="exercises_array_legs">
+        <item>Squat</item>
+        <item>Leg Press</item>
+        <item>Dumbbell Lunge</item>
+    </string-array>
+    
+    <string-array name="exercises_array_arms">
+        <item>Preacher Curl</item>
+        <item>Concentration Curl</item>
+        <item>Skullcrusher</item>
+    </string-array>
+    
+    <string-array name="exercises_array_core">
+        <item>Ab Crunch</item>
+        <item>Oblique Crunch</item>
+        <item>Side Raise</item>
+    </string-array>
+    
+    <string-array name="exercises_array_cardio">
+        <item>Running</item>
+        <item>Cycling</item>
+        <item>Swimming</item>
+    </string-array>
+</resources>
