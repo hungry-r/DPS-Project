@@ -52,6 +52,7 @@ public class Workout {
 	public void addExercise(Exercise exercise) {
 		exercises.add(exercise);
 	}
+	
 	public void addExercise(String name, String category, int weight, int reps) {
 		Exercise newExercise = new Exercise(name, category, weight, reps, this.id);
 		exercises.add(newExercise);
@@ -114,9 +115,8 @@ public class Workout {
 	}
 	
 	public int getDayOfYear() {
-		 Calendar ca = Calendar.getInstance();
-		  ca.set(year, month, day, hour, minute, 0);
+		Calendar ca = Calendar.getInstance();
+		ca.set(year, month, day, hour, minute, 0);
 		return ca.DAY_OF_YEAR;
-
 	}
 }

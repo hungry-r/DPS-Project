@@ -138,7 +138,7 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		
 		Cursor cursor = db.rawQuery(selectQuery, null);
-
+		
 		// loop to all rows to the list
 		if (cursor.moveToFirst()) {
 			do {

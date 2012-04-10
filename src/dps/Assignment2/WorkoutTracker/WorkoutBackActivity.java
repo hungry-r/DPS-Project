@@ -131,7 +131,7 @@ public class WorkoutBackActivity extends Activity {
 	        public void onDateSet(DatePicker view, int year, 
 	                              int monthOfYear, int dayOfMonth) {
 	        	WorkoutStartTabWidget.selectedYear = year;
-	            WorkoutStartTabWidget.selectedMonth = monthOfYear;
+	            WorkoutStartTabWidget.selectedMonth = monthOfYear + 1;
 	            WorkoutStartTabWidget.selectedDay = dayOfMonth;
 	            workoutDateText.setText(WorkoutStartTabWidget.selectedMonth + "/" + WorkoutStartTabWidget.selectedDay + "/" + WorkoutStartTabWidget.selectedYear);
 	            if (getWorkoutOn(WorkoutStartTabWidget.selectedYear,WorkoutStartTabWidget.selectedMonth, WorkoutStartTabWidget.selectedDay) == null) {
