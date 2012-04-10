@@ -214,33 +214,4 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 		return returnValue;
 	}
 
-	/* 
-	// delete a contact
-	public void deleteContact(Contact contact) {
-		SQLiteDatabase db = this.getWritableDatabase();
-		db.delete(TABLE_CONTACTS, KEY_ROW_ID + " = ?",
-				new String[] { String.valueOf(contact.getId()) });
-		db.close();
-	}
-
-	// remove all contacts from database.
-	public void removeAll() {
-		// db.delete(String tableName, String whereClause, String[] whereArgs);
-		// If whereClause is null, it will delete all rows.
-		SQLiteDatabase db = this.getWritableDatabase(); 
-		db.delete(TABLE_CONTACTS, null, null);
-		db.close();
-	}
-
-	// get contacts count
-	public int getContactsCount() {
-		String countQuery = "SELECT * FROM " + TABLE_CONTACTS;
-		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.rawQuery(countQuery, null);
-		int count = cursor.getCount();
-		cursor.close();
-		db.close();
-		return count;
-	}*/
-
 }

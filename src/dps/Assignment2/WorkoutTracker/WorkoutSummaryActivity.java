@@ -141,7 +141,7 @@ public class WorkoutSummaryActivity extends Activity {
         case DATE_DIALOG_ID:
             return new DatePickerDialog(this,
                         mDateSetListener,
-                        mYear, mMonth, mDay);
+                        WorkoutStartTabWidget.selectedYear, WorkoutStartTabWidget.selectedMonth - 1, WorkoutStartTabWidget.selectedDay);
         }
         return null;
     }
