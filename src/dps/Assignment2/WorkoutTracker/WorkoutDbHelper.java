@@ -133,7 +133,7 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 	public ArrayList<Workout> getAllWorkouts() {
 		ArrayList<Workout> workoutList = new ArrayList<Workout>();
 
-		String selectQuery = "SELECT  * FROM " + TABLE_WORKOUT;
+		String selectQuery = "SELECT  * FROM workout_table ORDER BY _year ASC, _month ASC, _day ASC;";
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		
