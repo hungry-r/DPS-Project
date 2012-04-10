@@ -108,4 +108,9 @@ public class Workout {
 	public int getID() {
 		return id;
 	}
+	public int getDayOfYear() {
+		 Calendar ca = Calendar.getInstance();
+		  ca.set(year, month, day, hour, minute, 0);
+		return ca.DAY_OF_YEAR;
+	}
 }
