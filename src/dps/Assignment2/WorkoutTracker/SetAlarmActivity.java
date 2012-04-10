@@ -49,23 +49,31 @@ public class SetAlarmActivity extends Activity {
 				  {
 					  String reminder = "Reminder is Set!: \n" + dp1.getYear() + " " + dp1.getMonth() + "-" + dp1.getDayOfMonth()+ "  " + hour + ":" + min;
 					  Toast.makeText(SetAlarmActivity.this, reminder, Toast.LENGTH_SHORT).show();
+					  
+					  //Creating and Saving Workout
+					  /*
+					  Workout workout = new Workout(dp1.getYear(), dp1.getMonth(), dp1.getDayOfMonth(), hour, min);
+					  WorkoutDbHelper handler = new WorkoutDbHelper(SetAlarmActivity.this);
+					  Workout workoutChecker = handler.getWorkout(dp1.getYear(), dp1.getMonth(), dp1.getDayOfMonth());
+					  if (workoutChecker == null){
+						  handler.addWorkout(workout);
+					  }
+					  handler.close();*/
 
-				  //Intent myIntent = new Intent(SetAlarmActivity.this, MyAlarmService.class);
-				  Intent i = new Intent(getBaseContext(), DisplayNotification.class);
-				  i.putExtra("NotifID", 1);
-	                
-				  
-				  
-				  pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, i, 0);  
-				  //pendingIntent = PendingIntent.getService(SetAlarmActivity.this, 0, myIntent, 0);
-			      AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-			      Calendar calendar = Calendar.getInstance();
-				  calendar.setTimeInMillis(System.currentTimeMillis());
-				  calendar.add(Calendar.SECOND, 8);
-				  //alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), displayIntent);
-			      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-			      Intent backH = new Intent(getBaseContext(), HomePageActivity.class);
-			    	startActivity(backH);
+					  
+					  //Intent myIntent = new Intent(SetAlarmActivity.this, MyAlarmService.class);
+					  Intent i = new Intent(getBaseContext(), DisplayNotification.class);
+					  i.putExtra("NotifID", 1);
+					  pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, i, 0);  
+					  //pendingIntent = PendingIntent.getService(SetAlarmActivity.this, 0, myIntent, 0);
+				      AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+				      Calendar calendar = Calendar.getInstance();
+					  calendar.setTimeInMillis(System.currentTimeMillis());
+					  calendar.add(Calendar.SECOND, 8);
+					  //alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), displayIntent);
+				      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+				      Intent backH = new Intent(getBaseContext(), HomePageActivity.class);
+				      startActivity(backH);
 				}
 	    	}
 	    });
