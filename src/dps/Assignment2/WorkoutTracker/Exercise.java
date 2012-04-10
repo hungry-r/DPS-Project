@@ -1,7 +1,5 @@
 package dps.Assignment2.WorkoutTracker;
 
-import android.R.string;
-
 public class Exercise {
 	private String name;
 	private String category;

@@ -3,8 +3,6 @@ package dps.Assignment2.WorkoutTracker;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import android.R.string;
-
 public class Workout {
 	private int id;
 	
@@ -36,18 +34,24 @@ public class Workout {
 		this.day = day;
 		this.hour = hour;
 		this.minute = minute;
+		exercises = new ArrayList<Exercise>();
 	}
 	
 	// This is called when retrieving a workout from the database
-	public Workout(int year, int month, int day, int hour, int minute, int id) {
+	public Workout(int year, int month, int day, int hour, int minute, int id, int weight) {
 		this.year = year;
 		this.month = month;
 		this.day = day;
 		this.hour = hour;
 		this.minute = minute;
 		this.id = id;
+		this.weight_body = weight;
+		exercises = new ArrayList<Exercise>();
 	}
 	
+	public void addExercise(Exercise exercise) {
+		exercises.add(exercise);
+	}
 	public void addExercise(String name, String category, int weight, int reps) {
 		Exercise newExercise = new Exercise(name, category, weight, reps, this.id);
 		exercises.add(newExercise);
@@ -57,7 +61,13 @@ public class Workout {
 		return exercises;
 	}
 	
-	public ArrayList<Exercise> getExercisesByCategory(string category) {
+	public void setExerciseRecords(ArrayList<Exercise> exerciseList) {
+		for (int i = 0; i < exerciseList.size(); i++) {
+			exercises.add(exerciseList.get(i));
+		}
+	}
+	
+	public ArrayList<Exercise> getExercisesByCategory(String category) {
 		ArrayList<Exercise> tempList = new ArrayList<Exercise>();
 		for (int i = 0; i < exercises.size(); i++) {
 			if (exercises.get(i).getCategory().equals(category)) {

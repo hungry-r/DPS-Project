@@ -35,10 +35,9 @@
     <TableRow>
         <TextView
             android:layout_column="1"
-            android:text="Exercise"
-            android:padding="3dip"
-            />
-
+            android:text="@string/exerciseText"
+            android:padding="3dip" />
+
 	    <Spinner
 	        android:layout_column="2"
 	        android:id="@+id/spinner_chest"
@@ -53,31 +52,35 @@
     <TableRow>
         <TextView
             android:layout_column="1"
-            android:text="Weight Lifted"
+            android:text="@string/weightText"
             android:padding="3dip" 
             android:layout_weight="0.5"/>
 
         <EditText
-            android:id="@+id/edit_weight"
+            android:id="@+id/chest_edit_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:background="@android:drawable/editbox_background" />
+            android:background="@android:drawable/editbox_background"
+            android:inputType="number"
+            android:maxLength="3" />
 
     </TableRow>
 
     <TableRow>
         <TextView
             android:layout_column="1"
-            android:text="Repititions"
+            android:text="@string/repsText"
             android:padding="3dip" 
             android:layout_weight="0.5"/>
         
-        <EditText android:id="@+id/edit_reps" 
+        <EditText android:id="@+id/chest_edit_reps" 
               android:layout_width="fill_parent" 
               android:layout_height="wrap_content" 
               android:background="@android:drawable/editbox_background"
-              android:layout_weight="0.5" />
+              android:layout_weight="0.5"
+              android:inputType="number"
+              android:maxLength="10" />
     </TableRow>
     
     <TableRow>
@@ -88,7 +91,7 @@
             android:layout_weight="0.5"/>
         
     <Button
-        android:id="@+id/changeDateBtn2"
+        android:id="@+id/chest_addBtn"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/addBtn"
@@ -96,16 +99,24 @@
         android:layout_weight="0.5" />    
     </TableRow>
     
-</TableLayout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	</TableLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
-  <TextView
-        android:id="@+id/label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello"
-        android:textSize="30px" />
+    	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+    
+	  	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:orientation="vertical"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:id="@+id/chest_exercise_layout">
+			   
+	  	    </LinearLayout>
+	  	    
+	  	</ScrollView>
     </LinearLayout>
 </LinearLayout>

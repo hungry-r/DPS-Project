@@ -52,8 +52,8 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 	
 	// workout table column names
 	public static final String KEY_EXERCISE_ID = "_id";
-	public static final String KEY_NAME = "_year";
-	public static final String KEY_CATEGORY = "_month";
+	public static final String KEY_NAME = "_name";
+	public static final String KEY_CATEGORY = "_category";
 	public static final String KEY_WEIGHT = "_weight";
 	public static final String KEY_REPS = "_reps";
 	public static final String KEY_PARENT_WORKOUT = "_parent_workout";
@@ -119,7 +119,7 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 			cursor.moveToFirst();
 			workout = new Workout(Integer.parseInt(cursor.getString(1)),
 				Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)),
-				Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(0)));
+				Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(6)));
 		}
 		else {
 			workout = null;
@@ -171,6 +171,23 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 
 		db.insert(TABLE_EXERCISE, null, values);
 		db.close();
+	}
+	
+	// Update a Workout entry in the database
+	public int updateWorkout(Workout workout) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(KEY_YEAR, workout.getYear());
+		values.put(KEY_MONTH, workout.getMonth());
+		values.put(KEY_DAY, workout.getDay());
+		values.put(KEY_HOUR, workout.getHour());
+		values.put(KEY_MINUTE, workout.getMinute());
+		values.put(KEY_WEIGHT_BODY, workout.getBodyWeight());
+		
+		int returnValue = db.update(TABLE_WORKOUT, values, KEY_WORKOUT_ID + "= ?", new String[] { String.valueOf(workout.getID())});
+		db.close();
+		return returnValue;
 	}
 
 	/* 

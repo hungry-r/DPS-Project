@@ -25,9 +25,14 @@ public class WorkoutStartTabWidget extends TabActivity {
 	    Intent intent;  // Reusable Intent for each tab
 
 	    // Create an Intent to launch an Activity for the tab (to be reused)
-	    intent = new Intent().setClass(this, WorkoutChestActivity.class);
+	    intent = new Intent().setClass(this, WorkoutSummaryActivity.class);
 
 	    // Initialize a TabSpec for each tab and add it to the TabHost
+	    spec = tabHost.newTabSpec("summary").setIndicator("Summary")
+                	  .setContent(intent);
+	    tabHost.addTab(spec);
+  
+	    intent = new Intent().setClass(this, WorkoutChestActivity.class);
 	    spec = tabHost.newTabSpec("chest").setIndicator("Chest")
 	                  .setContent(intent);
 	    tabHost.addTab(spec);
@@ -64,7 +69,7 @@ public class WorkoutStartTabWidget extends TabActivity {
 	    tabHost.getTabWidget().getChildAt(3).getLayoutParams().width = 140;
 	    tabHost.getTabWidget().getChildAt(4).getLayoutParams().width = 140;
 	    tabHost.getTabWidget().getChildAt(5).getLayoutParams().width = 140;
-	    
+	    tabHost.getTabWidget().getChildAt(6).getLayoutParams().width = 140;
 	    // Set default tab
 	    tabHost.setCurrentTab(0);
 	   
