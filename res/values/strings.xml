@@ -12,6 +12,12 @@
     <string name="changeDateBtn">Change Workout Date</string>
     <string name="workoutDateText">Workout Date:</string>
     <string name="addBtn">Add Exercise</string>
+    <string name="weight_addBtn">Update Weight</string>
+    <string name="exerciseText">Exercise</string>
+    <string name="weightText">Weight Lifted</string>
+    <string name="repsText">Repetitions</string>
+    <string name="bodyweightText">Body Weight</string>
+    <string name="exerciseListTitle">Exercise Summary List</string>
     
     <!--  Exercise Selector string values -->
     <string name="exerciseSpinnerTitle">Exercise Selector</string>

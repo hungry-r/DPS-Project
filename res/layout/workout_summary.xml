@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/changeDateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="@string/changeDateBtn"
+        android:textSize="12dp" />
+
+	<TextView
+	    android:id="@+id/workoutDateText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="@string/workoutDateText"
+        android:padding="3dip" />
+    </LinearLayout>
+    
+    
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1" >
+
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="@string/bodyweightText"
+            android:padding="3dip" 
+            android:layout_weight="0.5"/>
+
+        <EditText
+            android:id="@+id/edit_weight"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@android:drawable/editbox_background"
+            android:inputType="number"
+            android:maxLength="4" />
+
+    </TableRow>
+    
+    <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text=""
+            android:padding="3dip" 
+            android:layout_weight="0.5"/>
+        
+    <Button
+        android:id="@+id/weight_addBtn"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/weight_addBtn"
+        android:textSize="16dp"
+        android:layout_weight="0.5" />    
+     </TableRow>
+    
+	</TableLayout>
+	
+    <TextView
+    	android:id="@+id/exerciseListTitle"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center"
+       android:text="@string/exerciseListTitle"
+       android:padding="3dip"
+       android:layout_marginBottom="15dp" />
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    	<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+    
+	  	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:orientation="vertical"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:id="@+id/exercise_layout">
+			   
+	  	    </LinearLayout>
+	  	    
+	  	</ScrollView>
+    </LinearLayout>
+</LinearLayout>
