@@ -37,6 +37,7 @@ public class WorkoutChartActivity extends Activity{
 		}
 		GraphViewData[] GVD = new GraphViewData[maxO+1];
 		int indexkeeper = 0;
+		double lastweight =100;
 		while (tt.hasNext())
 		{
 			Workout wot = (Workout) tt.next();
@@ -47,8 +48,12 @@ public class WorkoutChartActivity extends Activity{
 				//GraphViewData newgvd =new GraphViewData(wot.getDayOfYear(), wot.getBodyWeight());
 				//newgvd.
 				GVD[indexkeeper]=new GraphViewData(wot.getDayOfYear(), wot.getBodyWeight());
-				indexkeeper++;
+				lastweight = wot.getBodyWeight();
 			}
+			else{
+				GVD[indexkeeper]=new GraphViewData(wot.getDayOfYear(), lastweight);
+			}
+			indexkeeper++;
 		}
 		
 		graphView.addSeries(new GraphViewSeries(GVD));
