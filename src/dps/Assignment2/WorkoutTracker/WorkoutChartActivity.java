@@ -24,7 +24,7 @@ public class WorkoutChartActivity extends Activity{
 		}));
 		setContentView(R.layout.weight_graph); 
 		LinearLayout LL = (LinearLayout)findViewById(R.id.lLgraph);
-		//LL.addView(graphView);
+		LL.addView(graphView);
 		
 	}
 }

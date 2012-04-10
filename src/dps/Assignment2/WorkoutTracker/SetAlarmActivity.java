@@ -51,14 +51,14 @@ public class SetAlarmActivity extends Activity {
 					  Toast.makeText(SetAlarmActivity.this, reminder, Toast.LENGTH_SHORT).show();
 					  
 					  //Creating and Saving Workout
-					  
+					  /*
 					  Workout workout = new Workout(dp1.getYear(), dp1.getMonth(), dp1.getDayOfMonth(), hour, min);
 					  WorkoutDbHelper handler = new WorkoutDbHelper(SetAlarmActivity.this);
 					  Workout workoutChecker = handler.getWorkout(dp1.getYear(), dp1.getMonth(), dp1.getDayOfMonth());
 					  if (workoutChecker == null){
 						  handler.addWorkout(workout);
 					  }
-					  handler.close();
+					  handler.close();*/
 
 					  
 					  //Intent myIntent = new Intent(SetAlarmActivity.this, MyAlarmService.class);
