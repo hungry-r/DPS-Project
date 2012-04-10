@@ -22,10 +22,10 @@ public class WorkoutChartActivity extends Activity{
 		);
 		
 		WorkoutDbHelper handler = new WorkoutDbHelper(WorkoutChartActivity.this);
-		ArrayList<Workout> workoutList = handler.getAllWorkout();
+		ArrayList<Workout> workoutList = handler.getAllWorkouts();
 		ListIterator<Workout> ss = workoutList.listIterator();
 		WorkoutDbHelper handler2 = new WorkoutDbHelper(WorkoutChartActivity.this);
-		ArrayList<Workout> workoutList2 = handler2.getAllWorkout();
+		ArrayList<Workout> workoutList2 = handler2.getAllWorkouts();
 		ListIterator<Workout> tt = workoutList2.listIterator();
 		
 		int maxO=0;
@@ -34,7 +34,7 @@ public class WorkoutChartActivity extends Activity{
 			maxO = ss.nextIndex();
 			ss.next();
 		}
-		GraphViewData[] GVD = new GraphViewData[maxO];
+		GraphViewData[] GVD = new GraphViewData[maxO+1];
 		int indexkeeper = 0;
 		while (tt.hasNext())
 		{

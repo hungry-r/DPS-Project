@@ -128,32 +128,32 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 		db.close();
 		return workout;
 	}
-	// get all workouts
-	public ArrayList<Workout> getAllWorkout() {
+	
+	// get all contacts
+	public ArrayList<Workout> getAllWorkouts() {
 		ArrayList<Workout> workoutList = new ArrayList<Workout>();
 
 		String selectQuery = "SELECT  * FROM " + TABLE_WORKOUT;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		
-		Cursor cursor = db.query(TABLE_EXERCISE, new String[] { KEY_WORKOUT_ID,
-				KEY_YEAR, KEY_MONTH, KEY_DAY, KEY_HOUR, KEY_MINUTE, KEY_WEIGHT_BODY}, null , null, 
-				null, null, null, null/* , null, null */);
+		Cursor cursor = db.rawQuery(selectQuery, null);
 
 		// loop to all rows to the list
 		if (cursor.moveToFirst()) {
 			do {
-				Workout workout = new Workout(Integer.parseInt(cursor.getString(1)),
-						Integer.parseInt(cursor.getString(2)), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)),
-						Integer.parseInt(cursor.getString(5)), Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(6)));
+				Workout workout = new Workout(Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), 
+						Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)),
+						Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(6)));
 
-				// Adding exercise to list
+				// Adding workout to list
 				workoutList.add(workout);
 			} while (cursor.moveToNext());
 		}
 		db.close();
 		return workoutList;
 	}
+
 	// get all contacts
 	public ArrayList<Exercise> getAllExercisesFromWorkout(int id) {
 		ArrayList<Exercise> exerciseList = new ArrayList<Exercise>();

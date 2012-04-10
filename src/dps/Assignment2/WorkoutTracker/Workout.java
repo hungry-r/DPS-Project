@@ -108,9 +108,15 @@ public class Workout {
 	public int getID() {
 		return id;
 	}
+	
+	public String toString() {
+		return "Workout on " + Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
+	}
+	
 	public int getDayOfYear() {
 		 Calendar ca = Calendar.getInstance();
 		  ca.set(year, month, day, hour, minute, 0);
 		return ca.DAY_OF_YEAR;
+
 	}
 }
