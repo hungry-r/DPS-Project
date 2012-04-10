@@ -1,6 +1,7 @@
 package dps.Assignment2.WorkoutTracker;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,12 @@ public class HomePageActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
+      //---look up the notification manager service---
+        NotificationManager nm = (NotificationManager) 
+            getSystemService(NOTIFICATION_SERVICE);
+ 
+        //---cancel the notification---
+        //nm.cancel(getIntent().getExtras().getInt("NotifID")); 
         
         Button workoutStartBtn = (Button)findViewById(R.id.startBtn);
         Button workoutHistoryBtn = (Button)findViewById(R.id.historyBtn);

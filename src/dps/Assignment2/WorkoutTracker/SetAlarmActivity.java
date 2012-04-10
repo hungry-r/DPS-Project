@@ -43,15 +43,15 @@ public class SetAlarmActivity extends Activity {
 				  if (nowCa.getTimeInMillis() > ca.getTimeInMillis())
 				  {
 		
-					  Toast.makeText(SetAlarmActivity.this, "Alarm Not Set: Alarm can not be saved for the Past", Toast.LENGTH_LONG).show();
+					  Toast.makeText(SetAlarmActivity.this, "Reminder Not Set: \nReminders can not be set for the Past", Toast.LENGTH_LONG).show();
 				  }
 				  else
 				  {
-					  Toast.makeText(SetAlarmActivity.this, "Gonna Work", Toast.LENGTH_SHORT).show();
+					  String reminder = "Reminder is Set!: \n" + dp1.getYear() + " " + dp1.getMonth() + "-" + dp1.getDayOfMonth()+ "  " + hour + ":" + min;
+					  Toast.makeText(SetAlarmActivity.this, reminder, Toast.LENGTH_SHORT).show();
 
-				  Intent myIntent = new Intent(SetAlarmActivity.this, MyAlarmService.class);
-				  Intent i = new Intent(SetAlarmActivity.this, DisplayNotification.class);
-				  //Intent i = new Intent("DisplayNotification");
+				  //Intent myIntent = new Intent(SetAlarmActivity.this, MyAlarmService.class);
+				  Intent i = new Intent(getBaseContext(), DisplayNotification.class);
 				  i.putExtra("NotifID", 1);
 	                
 				  
@@ -61,9 +61,11 @@ public class SetAlarmActivity extends Activity {
 			      AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
 			      Calendar calendar = Calendar.getInstance();
 				  calendar.setTimeInMillis(System.currentTimeMillis());
-				  calendar.add(Calendar.SECOND, 7);
+				  calendar.add(Calendar.SECOND, 8);
 				  //alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), displayIntent);
 			      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+			      Intent backH = new Intent(getBaseContext(), HomePageActivity.class);
+			    	startActivity(backH);
 				}
 	    	}
 	    });

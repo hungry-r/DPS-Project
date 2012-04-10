@@ -20,7 +20,10 @@ public class DisplayNotification extends Activity {
  
         //---PendingIntent to launch activity if the user selects 
         // the notification---
-        Intent i = new Intent("DPS914ProjectActivity");
+        Intent i = new Intent(Intent.ACTION_MAIN);
+        i.setClass(getApplicationContext(), WorkoutStartTabWidget.class);
+
+        //Intent i = new Intent("dps.Assignment2.HomePageActivity");
         i.putExtra("NotifID", notifID);  
  
         PendingIntent detailsIntent = 
@@ -30,10 +33,10 @@ public class DisplayNotification extends Activity {
             getSystemService(NOTIFICATION_SERVICE);
         Notification notif = new Notification(
             R.drawable.ic_launcher, 
-            "Time's up!",
+            "Reminder for your Workout!",
             System.currentTimeMillis());
- 
-        CharSequence from = "WorkOut Alarm!";
+        notif.flags = Notification.FLAG_AUTO_CANCEL;
+        CharSequence from = "WorkOut Tracker!";
         CharSequence message = "Let's start your Workout!";        
         notif.setLatestEventInfo(this, from, message, detailsIntent);
  
