@@ -128,12 +128,11 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 		db.close();
 		return workout;
 	}
-	
 	// get all contacts
 	public ArrayList<Workout> getAllWorkouts() {
 		ArrayList<Workout> workoutList = new ArrayList<Workout>();
 
-		String selectQuery = "SELECT  * FROM workout_table ORDER BY _year ASC, _month ASC, _day ASC;";
+		String selectQuery = "SELECT  _id, _year, _month, _day, _hour, _minute, _weight_body FROM workout_table ORDER BY _year ASC, _month ASC, _day ASC;";
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		
