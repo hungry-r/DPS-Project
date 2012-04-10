@@ -108,4 +108,8 @@ public class Workout {
 	public int getID() {
 		return id;
 	}
+	
+	public String toString() {
+		return "Workout on " + Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
+	}
 }

@@ -128,6 +128,31 @@ public class WorkoutDbHelper extends SQLiteOpenHelper {
 		db.close();
 		return workout;
 	}
+	
+	// get all contacts
+	public ArrayList<Workout> getAllWorkouts() {
+		ArrayList<Workout> workoutList = new ArrayList<Workout>();
+
+		String selectQuery = "SELECT  * FROM " + TABLE_WORKOUT;
+
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		Cursor cursor = db.rawQuery(selectQuery, null);
+
+		// loop to all rows to the list
+		if (cursor.moveToFirst()) {
+			do {
+				Workout workout = new Workout(Integer.parseInt(cursor.getString(1)), Integer.parseInt(cursor.getString(2)), 
+						Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)),
+						Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(6)));
+
+				// Adding workout to list
+				workoutList.add(workout);
+			} while (cursor.moveToNext());
+		}
+		db.close();
+		return workoutList;
+	}
 
 	// get all contacts
 	public ArrayList<Exercise> getAllExercisesFromWorkout(int id) {
