@@ -67,9 +67,9 @@ public class SetAlarmActivity extends Activity {
 					  pendingIntent = PendingIntent.getActivity(getBaseContext(), 0, i, 0);  
 					  //pendingIntent = PendingIntent.getService(SetAlarmActivity.this, 0, myIntent, 0);
 				      AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-				      Calendar calendar = Calendar.getInstance();
+				      /*Calendar calendar = Calendar.getInstance();
 					  calendar.setTimeInMillis(System.currentTimeMillis());
-					  calendar.add(Calendar.SECOND, 8);
+					  calendar.add(Calendar.SECOND, 8);*/
 					  //alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), displayIntent);
 				      alarmManager.set(AlarmManager.RTC_WAKEUP, ca.getTimeInMillis(), pendingIntent);
 				      Intent backH = new Intent(getBaseContext(), HomePageActivity.class);
