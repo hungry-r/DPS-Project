@@ -64,7 +64,6 @@ public class WorkoutBackActivity extends Activity {
         	WorkoutStartTabWidget.currentWorkout = createWorkoutOn(mYear, mMonth, mDay);
         }
         else {
-        	Toast.makeText(this, "onCreate", Toast.LENGTH_LONG).show();
         	WorkoutStartTabWidget.currentWorkout = getWorkoutOn(WorkoutStartTabWidget.selectedYear, WorkoutStartTabWidget.selectedMonth, WorkoutStartTabWidget.selectedDay);
         	WorkoutStartTabWidget.currentWorkout.setExerciseRecords(getExercisesForWorkout(WorkoutStartTabWidget.currentWorkout.getID()));
         	updateExerciseDisplay();
@@ -117,7 +116,6 @@ public class WorkoutBackActivity extends Activity {
         	WorkoutStartTabWidget.currentWorkout = createWorkoutOn(mYear, mMonth, mDay);
         }
         else {
-        	Toast.makeText(this, "onResume", Toast.LENGTH_LONG).show();
         	WorkoutStartTabWidget.currentWorkout = getWorkoutOn(WorkoutStartTabWidget.selectedYear, WorkoutStartTabWidget.selectedMonth, WorkoutStartTabWidget.selectedDay);
         	WorkoutStartTabWidget.currentWorkout.setExerciseRecords(getExercisesForWorkout(WorkoutStartTabWidget.currentWorkout.getID()));
         }
@@ -160,12 +158,6 @@ public class WorkoutBackActivity extends Activity {
     	Workout workout;
     	WorkoutDbHelper handler = new WorkoutDbHelper(WorkoutBackActivity.this);
     	workout = handler.getWorkout(year, month, day);
-    	if (workout != null) {
-
-    	}
-    	else {
-    		Toast.makeText(this, "Not found Get", Toast.LENGTH_LONG).show();
-    	}
     	handler.close();
     	return workout;
     }
@@ -176,11 +168,6 @@ public class WorkoutBackActivity extends Activity {
     	handler.addWorkout(workout);
     	workout = handler.getWorkout(year, month, day);
     	handler.close();
-    	if (workout != null) {
-    	}
-    	else {
-    		Toast.makeText(this, "Not found", Toast.LENGTH_LONG).show();
-    	}
     	return workout;
     }
     

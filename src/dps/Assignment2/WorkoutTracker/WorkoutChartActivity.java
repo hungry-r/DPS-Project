@@ -12,13 +12,14 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 public class WorkoutChartActivity extends Activity{
 	@Override
     public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		LineGraphView graphView = new LineGraphView(
 		this
-		, "Body Weight Graph - Weight(Kg) vs Days(#)"
+		, "Body Weight Graph - Weight(lbs) vs Days(#)"
 		);
 		
 		WorkoutDbHelper handler = new WorkoutDbHelper(WorkoutChartActivity.this);
@@ -39,9 +40,15 @@ public class WorkoutChartActivity extends Activity{
 		while (tt.hasNext())
 		{
 			Workout wot = (Workout) tt.next();
-			
-			GVD[indexkeeper]=new GraphViewData(wot.getDayOfYear(), wot.getBodyWeight());
-			indexkeeper++;
+			String testd = "BW : " + wot.getBodyWeight() + "  DOY : " +wot.getDayOfYear();
+			Toast.makeText(getBaseContext(), testd, Toast.LENGTH_SHORT).show();
+			if (wot.getBodyWeight()>0)
+			{
+				//GraphViewData newgvd =new GraphViewData(wot.getDayOfYear(), wot.getBodyWeight());
+				//newgvd.
+				GVD[indexkeeper]=new GraphViewData(wot.getDayOfYear(), wot.getBodyWeight());
+				indexkeeper++;
+			}
 		}
 		
 		graphView.addSeries(new GraphViewSeries(GVD));
